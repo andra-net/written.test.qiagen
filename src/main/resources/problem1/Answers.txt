@@ -1,0 +1,8 @@
+(a) The interal implementation for ArrayList uses a dynamic array (holding the index for each element) while a LinkedList uses a doubly linked
+ list (maintaining references to both next and previous node for each element).
+ ArrayList has a performance of O(1) for random access to its elements so it's best to use for storing and accessing data;
+ LinkedList has a performance of O(1) for adding/removing elements so it's best to use for manipulating data
+  (i.e. having lots of insert/delete operations).
+
+(b) While the performance of get/put/search operations in a hash table is O(1) for a hash function that produces unique hashes for each key,
+the performance would decrease to O(n) if the function returns a constant, since it would have to deal with collisions for every operation.
