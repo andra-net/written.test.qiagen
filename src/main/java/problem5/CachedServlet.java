@@ -28,10 +28,7 @@ public class CachedServlet extends HttpServlet {
             }
         }
 
-        if (result != null) {
-            encodeIntoResponse(response, result);
-        } else {
-
+        if (result == null) {
             result = doTimeConsumingCalculation(id);
 
             synchronized (this) {
@@ -39,6 +36,8 @@ public class CachedServlet extends HttpServlet {
                 lastResult = result;
             }
         }
+
+        encodeIntoResponse(response, result);
     }
 
     private void encodeIntoResponse(
